@@ -1,5 +1,72 @@
+html, body {
+    margin: 0 auto;
+    background-color: #103368;
+}
 
+.container {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 92vh 6vh;
+    direction: rtl;
+}
+
+.mems {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #2196F3;
+    padding: 1vw;
+}
+
+.img {
+    background-color: #44f321;
+}
+
+.controls {    
+	text-align: right;
+    align-self: center;
+    padding: 1vw;
+}
+
+.title {
+    text-align: left;
+    background-color: #df3b3b;
+    padding: 1vw;
+}
+
+.container .controls a {
+    display: inline-block;
+    border-radius: 50%;
+	width:       2vh;
+	height:      2vh;
+	line-height: 2vh;
+	text-decoration: none;
+	background: rgb(97, 87, 241);
+}
+
+.container .controls a:hover {
+	background: rgb(255, 255, 255);
+}
 
 @media only screen and (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-rows: 80vh 10vh 10vh;
+        grid-template-columns: 100vw;
+        text-align: center;
+        vertical-align: middle;
+    }
     
+    .mems {        
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background-color: #2196F3;        
+    }
+
+    .controls {
+        text-align: center;
+    }
+    
+    .title {
+        background-color: #df3b3b;
+    }
 }
