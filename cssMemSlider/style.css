@@ -1,51 +1,184 @@
 html, body {
     margin: 0 auto;
-    background-color: #103368;
+    background-color: #000000;
+    font-family: "Ink Free", Times, serif;
 }
 
 .container {
     display: grid;
     grid-template-columns: 50vw 50vw;
-    grid-template-rows: 92vh 6vh;
+    grid-template-rows: 90vh 8vh;
     direction: rtl;
 }
 
 .mems {
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: #2196F3;
     padding: 1vw;
+    direction: ltr;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.img {
-    background-color: #44f321;
+input {
+    display: none;
+    direction: ltr;
+}
+
+.content {
+    display: none;
+    height: 80vh;
+    width: 80vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 3vw;
+}
+
+label {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 1em;
+    border: solid 0.2em #6ba2db;
+    border-radius: 99em;
+    background-color: #6ba2db;
+    z-index: 2;
+    cursor: pointer;
+    transition-duration: 1.0s;
+}
+
+label:after {
+    content:"";
+    padding: 2em;
+    margin: -2em;
+}
+
+label:hover {
+    background-color: #ffffff;
+}
+
+input:nth-of-type(1):checked ~.container .controls label[for=control1]{
+    background-color: #000000;
+} 
+
+input:nth-of-type(2):checked ~.container .controls label[for=control2]{
+    background-color: #000000;
+} 
+
+input:nth-of-type(3):checked ~.container .controls label[for=control3]{
+    background-color: #000000;
+}
+
+input:nth-of-type(4):checked ~.container .controls label[for=control4]{
+    background-color: #000000;
+}
+
+input:nth-of-type(5):checked ~.container .controls label[for=control5]{
+    background-color: #000000;
 }
 
 .controls {    
 	text-align: right;
     align-self: center;
     padding: 1vw;
+    direction: ltr;
 }
 
 .title {
     text-align: left;
-    background-color: #df3b3b;
+    color: #ffffff;
+    margin-left: 1em;
     padding: 1vw;
+    direction: ltr;
+    font-size: 1.5rem;
 }
 
-.container .controls a {
-    display: inline-block;
-    border-radius: 50%;
-	width:       2vh;
-	height:      2vh;
-	line-height: 2vh;
-	text-decoration: none;
-	background: rgb(97, 87, 241);
+.title div {
+    display: none;
+    transition: opacity 4s ease-out;
+    opacity: 0;
 }
 
-.container .controls a:hover {
-	background: rgb(255, 255, 255);
+@keyframes showElement {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+input:nth-of-type(1):checked ~ .container .title .img-title1 {    
+    display: block;
+    animation: showElement 1s ease-in-out both;
 }
+
+input:nth-of-type(2):checked ~ .container .title .img-title2 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+    
+}
+
+input:nth-of-type(3):checked ~ .container .title .img-title3 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(4):checked ~ .container .title .img-title4 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(5):checked ~ .container .title .img-title5 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(1):checked ~.container .mems .img1 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(2):checked ~.container .mems .img2 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(3):checked ~.container .mems .img3 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(4):checked ~.container .mems .img4 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+
+input:nth-of-type(5):checked ~.container .mems .img5 {
+    display: block;
+    animation: showElement 1s ease-in-out both;
+}
+ 
+    
+  .img1{
+      background-image: url("./assets/img1.jpg");
+  }
+  
+  .img2{
+      background-image: url("./assets/img2.jpg");
+  }
+  
+  .img3 {
+      background-image: url("./assets/img3.jpg");
+  }
+  
+  .img4{
+      background-image: url("./assets/img4.jpg");
+  }
+  
+  .img5 {
+      background-image: url("./assets/img5.jpg");
+  }
+
+
 
 @media only screen and (max-width: 600px) {
     .container {
@@ -58,8 +191,7 @@ html, body {
     
     .mems {        
         grid-column-start: 1;
-        grid-column-end: 2;
-        background-color: #2196F3;        
+        grid-column-end: 2; 
     }
 
     .controls {
@@ -67,6 +199,24 @@ html, body {
     }
     
     .title {
-        background-color: #df3b3b;
+        text-align: center;
+    }
+
+    .content {
+        width: 95vw;
+        height: 50vh;
+        background-size: cover;
+    }
+
+    label {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 0.3em solid 6ba2db; 
+        transition-duration: 2.0s;
+    }
+
+    label:hover {
+        background-color: #fff;
     }
 }
